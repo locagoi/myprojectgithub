@@ -1,4 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
+from OpenSSL import SSL
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -25,3 +27,4 @@ def contacts():
 def index():
     return redirect(url_for("home"))
 
+app.run(ssl_context=(../pki/tls/certs))
