@@ -1,7 +1,5 @@
 from flask import Flask, render_template, redirect, url_for
-import os
 
-ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask(__name__)
 
@@ -29,9 +27,5 @@ def contacts():
 def index():
     return redirect(url_for("home"))
 
-if __name__ == '__main__':
-    app.run(0.0.0.0, debug = True, port = 443, ssl_context = adhoc)
-
-    'context = ('local.crt', 'local.key') #certificate and key files
-    'app.run(debug=True, ssl_context=context)
-
+if __name__ == "__main__":
+   app.run(host="0.0.0.0", port=443, ssl_context="adhoc")
